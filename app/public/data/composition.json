@@ -1,0 +1,41 @@
+{
+  "Classic Rules": [
+    { "name": "Rule of Thirds", "prompt": "rule of thirds composition, subject off-center, balanced visual weight" },
+    { "name": "Golden Ratio", "prompt": "golden ratio composition, fibonacci spiral, naturally pleasing proportions" },
+    { "name": "Golden Triangle", "prompt": "golden triangle composition, diagonal lines, dynamic balance" },
+    { "name": "Centered / Symmetrical", "prompt": "centered composition, symmetrical balance, formal arrangement" },
+    { "name": "Diagonal", "prompt": "diagonal composition, dynamic lines, sense of movement and energy" },
+    { "name": "L-Shaped", "prompt": "L-shaped composition, elements form L pattern, stable yet dynamic" }
+  ],
+  "Leading & Framing": [
+    { "name": "Leading Lines", "prompt": "leading lines composition, lines guide viewer's eye to subject" },
+    { "name": "Frame Within Frame", "prompt": "frame within frame composition, natural border around subject" },
+    { "name": "Tunnel / Archway", "prompt": "tunnel composition, archway framing, depth through opening" },
+    { "name": "Foreground Interest", "prompt": "foreground interest composition, layered depth, near and far elements" },
+    { "name": "Through Window", "prompt": "through window composition, view framed by window, indoor-outdoor connection" }
+  ],
+  "Spatial Techniques": [
+    { "name": "Negative Space", "prompt": "negative space composition, minimalist, subject with breathing room" },
+    { "name": "Fill the Frame", "prompt": "fill the frame composition, tight crop, subject dominates image" },
+    { "name": "Deep Depth", "prompt": "deep depth composition, foreground, midground, background layers" },
+    { "name": "Flat / 2D", "prompt": "flat composition, two-dimensional aesthetic, graphic quality" },
+    { "name": "Bird's Eye View", "prompt": "bird's eye view composition, overhead perspective, pattern emphasis" },
+    { "name": "Worm's Eye View", "prompt": "worm's eye view composition, low angle looking up, dramatic perspective" }
+  ],
+  "Dynamic Compositions": [
+    { "name": "Dynamic Tension", "prompt": "dynamic tension composition, contrasting elements, visual conflict" },
+    { "name": "Radial", "prompt": "radial composition, elements radiating from center, circular movement" },
+    { "name": "S-Curve", "prompt": "S-curve composition, flowing curved lines, graceful movement" },
+    { "name": "Triangular", "prompt": "triangular composition, three points of interest, stable arrangement" },
+    { "name": "Juxtaposition", "prompt": "juxtaposition composition, contrasting elements side by side, visual comparison" },
+    { "name": "Layered", "prompt": "layered composition, multiple planes of depth, complex visual hierarchy" }
+  ],
+  "Special Purpose": [
+    { "name": "Portrait Close-up", "prompt": "portrait composition, face fills frame, intimate connection, eye contact" },
+    { "name": "Environmental Portrait", "prompt": "environmental portrait composition, subject in context, story-telling background" },
+    { "name": "Landscape Panoramic", "prompt": "panoramic landscape composition, wide vista, horizontal emphasis" },
+    { "name": "Product Centered", "prompt": "product composition, item centered, clean background, commercial appeal" },
+    { "name": "Action / Motion", "prompt": "action composition, motion blur, dynamic movement, peak moment" },
+    { "name": "Candid / Documentary", "prompt": "candid composition, unposed moment, authentic documentary style" }
+  ]
+}
