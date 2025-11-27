@@ -1,6 +1,8 @@
 # FLUX 2 Prompt Builder
 
-A visual prompt builder for AI image generation for FLUX2,  Designed with a ComfyUI-inspired interface for building structured prompts with precise camera settings, lighting, composition, and color palettes.
+![FLUX 2 Prompt Builder](ss.png)
+
+A visual prompt builder for AI image generation for FLUX2. Designed with a ComfyUI-inspired interface for building structured prompts with precise camera settings, lighting, composition, and color palettes.
 
 ## About This Project
 
