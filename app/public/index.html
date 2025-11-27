@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLUX 2 Prompt Node v2 - ComfyUI Style</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <div class="node-wrapper">
+    <div class="node" id="prompt-node">
+      <div class="node-header">
+        <div class="node-header-icon">✨</div>
+        FLUX 2 Prompt Builder v2
+      </div>
+      <div class="node-body">
+
+        <div class="preset-section">
+          <div class="field-group">
+            <div class="field-label">Load Preset</div>
+            <select class="field-input" id="preset-select">
+              <option value="">— Select a preset —</option>
+              <optgroup label="People & Portraits">
+                <option value="intimate">Intimate Portrait</option>
+                <option value="boudoir">Boudoir / Fine Art</option>
+                <option value="portrait">Documentary Portrait</option>
+                <option value="fashion">Fashion Editorial</option>
+              </optgroup>
+              <optgroup label="Nature & Outdoors">
+                <option value="landscape">Landscape</option>
+                <option value="wildlife">Wildlife</option>
+                <option value="macro">Macro Nature</option>
+                <option value="underwater">Underwater</option>
+                <option value="astro">Astrophotography</option>
+              </optgroup>
+              <optgroup label="Action & Events">
+                <option value="sports">Sports / Action</option>
+                <option value="street">Street Photography</option>
+                <option value="theatrical">Theatrical Performance</option>
+                <option value="culinary">Culinary Action</option>
+              </optgroup>
+              <optgroup label="Commercial & Product">
+                <option value="product">Product Photography</option>
+                <option value="automotive">Automotive</option>
+                <option value="architectural">Architectural</option>
+              </optgroup>
+              <optgroup label="Artistic & Stylized">
+                <option value="cinematic">Cinematic / Film Noir</option>
+                <option value="vintage">Vintage / Retro</option>
+                <option value="minimalist">Minimalist</option>
+              </optgroup>
+              <optgroup label="Adult (18+)">
+                <option value="nsfw">NSFW / Artistic Nude</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">Main Prompt</div>
+          <textarea class="field-input" id="prompt" placeholder="Describe your scene in detail..."></textarea>
+        </div>
+
+        <div class="field-group">
+          <div class="field-label">Style</div>
+          <div class="style-selector" id="style-selector">
+            <select class="field-input style-dropdown" id="style-dropdown">
+              <option value="">— Select a style —</option>
+            </select>
+            <input type="text" class="field-input style-text" id="style" placeholder="e.g., photorealistic, cinematic lighting, editorial fashion">
+            <button class="edit-toggle" id="style-edit-toggle" title="Edit raw style text">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                <path d="m15 5 4 4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <div class="sub-section-title">Camera Settings</div>
+
+          <div class="inline-fields" style="margin-bottom: 8px;">
+            <div class="field-group">
+              <div class="field-label">Angle</div>
+              <div class="combo-input">
+                <input type="text" class="field-input" id="camera-angle" placeholder="eye level">
+                <button class="dropdown-toggle" data-target="angle-menu">▼</button>
+                <div class="dropdown-menu" id="angle-menu">
+                  <div class="option-header">Common Angles</div>
+                  <div class="option" data-value="eye level">eye level (natural)</div>
+                  <div class="option" data-value="low angle">low angle (powerful)</div>
+                  <div class="option" data-value="high angle">high angle (diminishing)</div>
+                  <div class="option" data-value="bird's-eye">bird's-eye (architectural)</div>
+                  <div class="option" data-value="worm's-eye">worm's-eye (dramatic)</div>
+                  <div class="option-header">Subtle Variations</div>
+                  <div class="option" data-value="slightly low">slightly low</div>
+                  <div class="option" data-value="slightly high">slightly high</div>
+                  <div class="option-header">Creative Angles</div>
+                  <div class="option" data-value="Dutch angle">Dutch angle (tilted)</div>
+                  <div class="option" data-value="over-the-shoulder">over-the-shoulder (intimate)</div>
+                  <div class="option" data-value="overhead flat lay">overhead flat lay</div>
+                  <div class="option" data-value="ground level">ground level</div>
+                  <div class="option" data-value="dynamic angle">dynamic angle</div>
+                </div>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="field-label">Shot / Distance</div>
+              <div class="combo-input">
+                <input type="text" class="field-input" id="camera-shot" placeholder="medium shot">
+                <button class="dropdown-toggle" data-target="shot-menu">▼</button>
+                <div class="dropdown-menu" id="shot-menu">
+                  <div class="option-header">Standard Shots</div>
+                  <div class="option" data-value="extreme close-up">extreme close-up</div>
+                  <div class="option" data-value="close-up">close-up</div>
+                  <div class="option" data-value="medium close-up">medium close-up</div>
+                  <div class="option" data-value="medium shot">medium shot</div>
+                  <div class="option" data-value="medium full shot">medium full shot</div>
+                  <div class="option" data-value="full body">full body</div>
+                  <div class="option" data-value="wide shot">wide shot</div>
+                  <div class="option-header">Specialized</div>
+                  <div class="option" data-value="macro detail">macro detail</div>
+                  <div class="option" data-value="tight detail">tight detail</div>
+                  <div class="option" data-value="product close-up">product close-up</div>
+                  <div class="option" data-value="intimate close-up">intimate close-up</div>
+                  <div class="option-header">Motion Shots</div>
+                  <div class="option" data-value="tracking shot">tracking shot</div>
+                  <div class="option" data-value="action shot">action shot</div>
+                  <div class="option" data-value="full body action">full body action</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="inline-fields" style="margin-bottom: 8px;">
+            <div class="field-group">
+              <div class="field-label">Lens (mm)</div>
+              <div class="combo-input">
+                <input type="text" class="field-input" id="camera-lens" placeholder="50mm">
+                <button class="dropdown-toggle" data-target="lens-menu">▼</button>
+                <div class="dropdown-menu" id="lens-menu">
+                  <div class="option-header">Wide (Dramatic)</div>
+                  <div class="option" data-value="14mm">14mm (ultra-wide)</div>
+                  <div class="option" data-value="24mm">24mm (wide)</div>
+                  <div class="option" data-value="28mm">28mm (wide)</div>
+                  <div class="option-header">Natural</div>
+                  <div class="option" data-value="35mm">35mm (natural)</div>
+                  <div class="option" data-value="50mm">50mm (standard)</div>
+                  <div class="option-header">Portrait / Telephoto</div>
+                  <div class="option" data-value="70mm">70mm</div>
+                  <div class="option" data-value="85mm">85mm (portrait)</div>
+                  <div class="option" data-value="100mm">100mm</div>
+                  <div class="option" data-value="135mm">135mm (telephoto)</div>
+                  <div class="option" data-value="200mm">200mm (telephoto)</div>
+                  <div class="option-header">Specialty</div>
+                  <div class="option" data-value="100mm macro">100mm macro</div>
+                  <div class="option" data-value="fisheye">fisheye</div>
+                  <div class="option" data-value="tilt-shift">tilt-shift</div>
+                </div>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="field-label">Aperture (f-stop)</div>
+              <div class="combo-input">
+                <input type="text" class="field-input" id="camera-aperture" placeholder="f/2.8">
+                <button class="dropdown-toggle" data-target="aperture-menu">▼</button>
+                <div class="dropdown-menu" id="aperture-menu">
+                  <div class="option-header">Shallow DOF (Blurred BG)</div>
+                  <div class="option" data-value="f/1.2">f/1.2 (very shallow)</div>
+                  <div class="option" data-value="f/1.4">f/1.4 (shallow)</div>
+                  <div class="option" data-value="f/1.8">f/1.8</div>
+                  <div class="option" data-value="f/2.0">f/2.0</div>
+                  <div class="option" data-value="f/2.8">f/2.8 (portrait)</div>
+                  <div class="option-header">Moderate DOF</div>
+                  <div class="option" data-value="f/4">f/4</div>
+                  <div class="option" data-value="f/5.6">f/5.6 (balanced)</div>
+                  <div class="option-header">Deep DOF (Sharp BG)</div>
+                  <div class="option" data-value="f/8">f/8 (landscape)</div>
+                  <div class="option" data-value="f/11">f/11 (sharp)</div>
+                  <div class="option" data-value="f/16">f/16 (deep focus)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="inline-fields">
+            <div class="field-group">
+              <div class="field-label">ISO</div>
+              <div class="combo-input">
+                <input type="text" class="field-input" id="camera-iso" placeholder="100">
+                <button class="dropdown-toggle" data-target="iso-menu">▼</button>
+                <div class="dropdown-menu" id="iso-menu">
+                  <div class="option-header">Low (Clean)</div>
+                  <div class="option" data-value="100">100 (cleanest)</div>
+                  <div class="option" data-value="200">200</div>
+                  <div class="option" data-value="400">400</div>
+                  <div class="option-header">Medium</div>
+                  <div class="option" data-value="800">800</div>
+                  <div class="option" data-value="1600">1600</div>
+                  <div class="option-header">High (Grainy)</div>
+                  <div class="option" data-value="3200">3200 (noisy)</div>
+                  <div class="option" data-value="6400">6400 (grainy)</div>
+                </div>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="field-label">Focus Description</div>
+              <input type="text" class="field-input" id="camera-focus" placeholder="Sharp focus on subject">
+            </div>
+          </div>
+
+          <div class="field-group" style="margin-top: 8px;">
+            <div class="field-label">Camera / Film Stock <span class="hint">(optional, for authenticity)</span></div>
+            <div class="style-selector" id="camera-selector">
+              <select class="field-input style-dropdown" id="camera-dropdown">
+                <option value="">— Select camera/lens —</option>
+              </select>
+              <input type="text" class="field-input style-text" id="camera-model" placeholder="e.g., Shot on Fujifilm X-T5, Kodak Portra 400">
+              <button class="edit-toggle" id="camera-edit-toggle" title="Edit raw camera text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                  <path d="m15 5 4 4"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <div class="sub-section-title">Lighting</div>
+          <div class="field-group">
+            <div class="style-selector" id="lighting-selector">
+              <select class="field-input style-dropdown" id="lighting-dropdown">
+                <option value="">— Select lighting —</option>
+              </select>
+              <input type="text" class="field-input style-text" id="lighting" placeholder="e.g., Three-point softbox, golden hour, dramatic chiaroscuro">
+              <button class="edit-toggle" id="lighting-edit-toggle" title="Edit raw lighting text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+                  <path d="m15 5 4 4"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <div class="sub-section-title">Color Palette</div>
+
+          <div class="image-picker-section">
+            <div class="image-drop-zone" id="image-drop-zone">
+              <div class="drop-zone-content" id="drop-zone-content">
+                <div class="drop-icon">🖼️</div>
+                <div class="drop-text">Drop image here or click to upload</div>
+                <div class="drop-hint">Click on image to pick colors (no SSL required)</div>
+              </div>
+              <canvas id="image-canvas"></canvas>
+              <button class="clear-image-btn" id="clear-image" title="Clear image">×</button>
+            </div>
+            <input type="file" id="image-input" accept="image/*" style="display: none;">
+            <div class="picked-color-preview" id="picked-color-preview">
+              <div class="preview-swatch" id="preview-swatch"></div>
+              <span id="preview-hex">Click image to add color</span>
+            </div>
+          </div>
+
+          <div class="color-palette" id="color-palette"></div>
+          <button class="add-color-btn" id="add-color">+ Add Color</button>
+
+          <div class="field-group" style="margin-top: 12px;">
+            <div class="field-label">Mood</div>
+            <div class="style-selector" id="mood-selector">
+              <select class="field-input style-dropdown" id="mood-dropdown">
+                <option value="">— Select mood —</option>
+              </select>
+              <input type="text" class="field-input style-text" id="color-mood" placeholder="e.g., moody yet vibrant, urban elegance">
+              <button class="edit-toggle" id="mood-edit-toggle" title="Edit raw mood text">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <div class="sub-section-title">Composition</div>
+          <div class="style-selector" id="composition-selector">
+            <select class="field-input style-dropdown" id="composition-dropdown">
+              <option value="">— Select composition —</option>
+            </select>
+            <input type="text" class="field-input style-text" id="composition" placeholder="rule of thirds, leading lines">
+            <button class="edit-toggle" id="composition-edit-toggle" title="Edit raw composition text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="sub-section">
+          <div class="sub-section-title">Output Options</div>
+          <div class="toggle-row">
+            <span class="toggle-label">Include empty fields</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="include-empty">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Numeric lens-mm format</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="numeric-lens" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="socket-output"></div>
+  </div>
+
+  <div class="connection-line"></div>
+
+  <div class="node-wrapper">
+    <div class="node output-node">
+      <div class="node-header">
+        <div class="node-header-icon">📋</div>
+        JSON Output
+      </div>
+      <div class="node-body">
+        <div class="json-output" id="json-output"></div>
+        <button class="copy-btn" id="copy-btn">Copy to Clipboard</button>
+      </div>
+    </div>
+    <div class="socket-input"></div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
