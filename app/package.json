@@ -1,0 +1,22 @@
+{
+  "name": "photo-prompt-generator",
+  "version": "1.0.0",
+  "description": "AI Photo Prompt Generator for Flux and other image generation models",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "photography",
+    "ai",
+    "flux",
+    "prompt-generator",
+    "image-generation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
