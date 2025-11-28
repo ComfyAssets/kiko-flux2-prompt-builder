@@ -1,0 +1,63 @@
+{
+  "Canon": [
+    { "name": "EOS 5D Mark IV + 35mm f/1.4", "prompt": "shot on Canon EOS 5D Mark IV with a 35mm f/1.4 lens" },
+    { "name": "EOS 5D Mark IV + 50mm f/1.2", "prompt": "shot on Canon EOS 5D Mark IV with a 50mm f/1.2 lens" },
+    { "name": "EOS R5 + 24-70mm f/2.8", "prompt": "shot on Canon EOS R5 with a 24-70mm f/2.8 zoom lens" },
+    { "name": "EOS R5 + 85mm f/1.2", "prompt": "shot on Canon EOS R5 with an 85mm f/1.2 portrait lens" },
+    { "name": "EOS R6 Mark II + 35mm f/1.8", "prompt": "shot on Canon EOS R6 Mark II with a 35mm f/1.8 lens" }
+  ],
+  "Nikon": [
+    { "name": "D850 + 24-70mm f/2.8", "prompt": "shot on Nikon D850 with a 24-70mm f/2.8 zoom lens" },
+    { "name": "D850 + 85mm f/1.4", "prompt": "shot on Nikon D850 with an 85mm f/1.4 portrait lens" },
+    { "name": "Z7 II + 35mm f/1.8", "prompt": "shot on Nikon Z7 II with a 35mm f/1.8 lens" },
+    { "name": "Z8 + 50mm f/1.2", "prompt": "shot on Nikon Z8 with a 50mm f/1.2 lens" }
+  ],
+  "Sony": [
+    { "name": "A7 IV + 35mm f/1.4 GM", "prompt": "shot on Sony A7 IV with a 35mm f/1.4 G Master lens" },
+    { "name": "A7 IV + 85mm f/1.4 GM", "prompt": "shot on Sony A7 IV with an 85mm f/1.4 G Master portrait lens" },
+    { "name": "A7R IV + 24-70mm f/2.8 GM", "prompt": "shot on Sony A7R IV with a 24-70mm f/2.8 zoom lens" },
+    { "name": "A7S III + 24mm f/1.4 GM", "prompt": "shot on Sony A7S III with a 24mm f/1.4 low-light lens" },
+    { "name": "Alpha 1 + 50mm f/1.2 GM", "prompt": "shot on Sony Alpha 1 with a 50mm f/1.2 G Master lens" }
+  ],
+  "Fujifilm": [
+    { "name": "X-T5 + 23mm f/1.4", "prompt": "shot on Fujifilm X-T5 with a 23mm f/1.4 lens, classic chrome film simulation" },
+    { "name": "X-H2S + 16-55mm f/2.8", "prompt": "shot on Fujifilm X-H2S with a 16-55mm f/2.8 zoom lens" },
+    { "name": "GFX 100S + 80mm f/1.7", "prompt": "shot on Fujifilm GFX 100S with an 80mm f/1.7 medium-format portrait lens" }
+  ],
+  "Leica": [
+    { "name": "M10 + 35mm f/1.4 Summilux", "prompt": "shot on Leica M10 with a 35mm f/1.4 Summilux lens" },
+    { "name": "Q2 + 28mm f/1.7", "prompt": "shot on Leica Q2 with its 28mm f/1.7 Summilux lens" }
+  ],
+  "Hasselblad": [
+    { "name": "X1D II 50C + 65mm f/2.8", "prompt": "shot on Hasselblad X1D II 50C with a 65mm f/2.8 medium-format lens" }
+  ],
+  "Phase One": [
+    { "name": "XF IQ4 + 80mm f/2.8", "prompt": "shot on Phase One XF IQ4 with an 80mm f/2.8 medium-format lens" }
+  ],
+  "Panasonic": [
+    { "name": "Lumix S5 II + 24-105mm f/4", "prompt": "shot on Panasonic Lumix S5 II with a 24-105mm f/4 lens" },
+    { "name": "Lumix GH6 + 12-35mm f/2.8", "prompt": "shot on Panasonic GH6 with a 12-35mm f/2.8 MFT lens" }
+  ],
+  "Other Cameras": [
+    { "name": "Pentax K-1 II + 31mm f/1.8", "prompt": "shot on Pentax K-1 Mark II with a 31mm f/1.8 Limited lens" },
+    { "name": "OM System E-M1 III + 17mm f/1.2", "prompt": "shot on OM-D E-M1 Mark III with a 17mm f/1.2 PRO lens" },
+    { "name": "Ricoh GR III", "prompt": "shot on Ricoh GR III with its fixed 28mm equivalent f/2.8 lens" },
+    { "name": "Sony RX100 VII", "prompt": "shot on Sony RX100 VII with its 24-200mm equivalent zoom lens" }
+  ],
+  "Smartphones": [
+    { "name": "iPhone 15 Pro", "prompt": "shot on iPhone 15 Pro, 24mm main camera, computational photography" },
+    { "name": "Samsung Galaxy S24 Ultra", "prompt": "shot on Samsung Galaxy S24 Ultra main wide camera" }
+  ],
+  "Film Stocks": [
+    { "name": "Kodak Portra 400", "prompt": "shot on Kodak Portra 400 film, warm tones, fine grain" },
+    { "name": "Kodak Portra 800", "prompt": "shot on Kodak Portra 800 film, versatile color negative" },
+    { "name": "Kodak Ektar 100", "prompt": "shot on Kodak Ektar 100 film, vivid colors, fine grain" },
+    { "name": "Kodak Gold 200", "prompt": "shot on Kodak Gold 200 film, warm nostalgic tones" },
+    { "name": "Fujifilm Pro 400H", "prompt": "shot on Fujifilm Pro 400H film, soft pastel colors" },
+    { "name": "Fujifilm Superia 400", "prompt": "shot on Fujifilm Superia 400 film, classic consumer film look" },
+    { "name": "Cinestill 800T", "prompt": "shot on Cinestill 800T film, cinematic tungsten-balanced, halation effect" },
+    { "name": "Ilford HP5 Plus", "prompt": "shot on Ilford HP5 Plus black and white film, classic grain" },
+    { "name": "Kodak Tri-X 400", "prompt": "shot on Kodak Tri-X 400 black and white film, iconic contrast" },
+    { "name": "Ilford Delta 3200", "prompt": "shot on Ilford Delta 3200 black and white film, dramatic grain" }
+  ]
+}

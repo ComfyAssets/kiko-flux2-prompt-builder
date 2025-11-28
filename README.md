@@ -1,187 +1,171 @@
-# FLUX 2 Prompt Builder
+# 🎨 Kiko Prompt Builder
+
+A visual prompt builder [ComfyUI](https://www.comfy.org/) custom node for structured JSON prompt generation. Build photography-style prompts with camera settings, lighting, composition, and color palettes.
+
+**Compatible with:** [FLUX](https://bfl.ai/) (by Black Forest Labs), [z-image](https://z-image.ai/), and any other image generation model that accepts structured JSON prompts.
 
 ![FLUX 2 Prompt Builder](ss.png)
 
-A visual prompt builder for AI image generation for FLUX2. Designed with a ComfyUI-inspired interface for building structured prompts with precise camera settings, lighting, composition, and color palettes.
+![FLUX 2 Prompt Builder](ss2.png)
 
-## About This Project
+![FLUX 2 Prompt Builder](ss3.png)
 
-This project is being developed as a **ComfyUI custom node** that will provide a visual prompt building interface directly within ComfyUI workflows. However, ComfyUI custom nodes with complex DOM requirements need special handling for custom UI components.
+## ✨ Features
 
-**While we work on the custom node integration**, we're releasing this standalone version so users can start building prompts immediately.
-
-## Usage Options
-
-### Option 1: Single-Page HTML (Portable)
-
-The simplest way to use this tool is with the standalone HTML file:
-
-```bash
-# Just open the HTML file in your browser
-open flux2-prompt-node-v2.html 
-# Or double-click the file in your file manager
-```
-
-**Limitations:**
-- EyeDropper (screen color picker) will **not** work due to browser security restrictions, if you server it over https you can use it, we have included a standalone canvas picker, just add an image and you can build your pallet visually. 
-- All other features work normally
-
-### Option 2: Node.js Application (Recommended)
-
-For the full experience with all features:
-
-```bash
-cd app
-
-# Start the server
-./start.sh
-
-# The app will be available at http://localhost:3000
-
-# To stop the server
-./stop.sh
-```
-
-**Requirements:**
-- Node.js 14+ installed
-- npm (comes with Node.js)
-
-### Color Picker Options
-
-| Method | Works Without SSL? | Browser Support |
-|--------|-------------------|-----------------|
-| Color Input (native) | Yes | All browsers |
-| Image Upload + Canvas | Yes | All browsers |
-| EyeDropper (screen) | Requires HTTPS or localhost | Chrome, Edge, Opera only |
-
-**Note:** Firefox and Safari do not support the EyeDropper API at all. Use the image upload feature as an alternative - drop or upload any image and click on it to pick colors directly from the canvas.
-
-## Features
-
-- **20+ Photography Presets**: Intimate portraits, landscapes, street photography, product shots, and more
-- **Detailed Camera Settings**: Angle, shot distance, lens focal length, aperture, ISO, focus description
+- **20+ Photography Presets**: Intimate portraits, landscapes, street photography, product shots, architectural, wildlife, and more
+- **Complete Camera Settings**: Angle, shot distance, lens focal length, aperture, ISO, focus description
 - **Camera/Film Stock Database**: Authentic camera models and film stocks for realistic rendering
 - **Professional Lighting Presets**: Natural light, studio setups, dramatic/cinematic options
-- **Composition Guidelines**: Rule of thirds, golden ratio, leading lines, and more
-- **Color Palette Builder**:
-  - Native color picker
-  - Image-based color picking (no SSL required)
-  - EyeDropper for screen sampling (HTTPS/localhost only)
+- **Composition Guidelines**: Rule of thirds, golden ratio, leading lines, symmetrical, and more
+- **Color Palette Builder**: Visual color swatches with hex support
 - **Mood Presets**: Emotional tones and visual aesthetics
-- **Real-time JSON Output**: See your prompt structure as you build
-- **Style Presets**: Photography, painting, illustration, drawing, 3D rendering
+- **Dual Output**: Structured JSON and flattened text prompt formats
+- **Context Menu**: Quick preset access, copy JSON, reset to defaults
 
-## Project Structure
+## 🔌 Model Compatibility
 
-```
-photo-info/
-├── README.md                    # This file
-├── photo-prompt-generator.html  # Standalone single-file version
-└── app/                         # Node.js application
-    ├── server.js                # Express server
-    ├── package.json             # Dependencies
-    ├── start.sh                 # Start script
-    ├── stop.sh                  # Stop script
-    └── public/                  # Static files
-        ├── index.html           # Main HTML
-        ├── css/
-        │   └── styles.css       # Styling
-        ├── js/
-        │   └── app.js           # Application logic
-        └── data/                # Preset data (JSON)
-            ├── presets.json     # Scene presets
-            ├── styles.json      # Style options
-            ├── cameras.json     # Camera/film stock database
-            ├── lighting.json    # Lighting presets
-            ├── mood.json        # Mood options
-            └── composition.json # Composition techniques
-```
+This node outputs structured JSON and flattened text prompts compatible with:
 
-## Running with SSL (For EyeDropper Support)
+| Model | Compatibility | Notes |
+|-------|---------------|-------|
+| **[FLUX](https://bfl.ai/)** | ✅ Full | Primary target; supports all JSON fields |
+| **[z-image](https://z-image.ai/)** | ✅ Full | Supports structured JSON prompts |
+| **Other JSON models** | ✅ Varies | Any model accepting JSON prompt format |
+| **Standard CLIP** | ✅ Text output | Use `text_prompt` output for CLIP encoders |
 
-If you want the screen color picker to work and can't use `localhost`, you'll need to serve over HTTPS. Here are some options:
+## 📦 Installation
 
-### Using a reverse proxy (nginx example)
+### Method 1: ComfyUI Manager (Recommended)
+1. Open ComfyUI Manager
+2. Search for "Kiko FLUX2 Prompt Builder"
+3. Click Install
 
-```nginx
-server {
-    listen 443 ssl;
-    server_name your-domain.com;
-
-    ssl_certificate /path/to/cert.pem;
-    ssl_certificate_key /path/to/key.pem;
-
-    location / {
-        proxy_pass http://localhost:3000;
-    }
-}
-```
-
-### Using mkcert for local development
-
+### Method 2: Manual Installation
 ```bash
-# Install mkcert
-brew install mkcert  # macOS
-# or see https://github.com/FiloSottile/mkcert for other platforms
-
-# Create local CA and certificates
-mkcert -install
-mkcert localhost
-
-# Then configure your server to use the generated certificates
+cd ComfyUI/custom_nodes
+git clone https://github.com/ComfyAssets/kiko-flux2-prompt-builder.git
+# Restart ComfyUI
 ```
 
-## ComfyUI Custom Node (Coming Soon)
+### Method 3: Download ZIP
+1. Download the latest release
+2. Extract to `ComfyUI/custom_nodes/kiko-flux2-prompt-builder`
+3. Restart ComfyUI
 
-The ComfyUI version will:
-- Integrate directly into ComfyUI workflows
-- Output structured prompt data for image generation nodes
-- Support custom DOM elements for the visual interface
-- Maintain all features of the standalone version
+## 🚀 Usage
 
-Stay tuned for updates on the custom node release!
+1. **Add the node**: Right-click → Add Node → 🎨 Kiko → Prompting → FLUX2 Prompt Builder
+2. **Select a preset** or build from scratch
+3. **Customize** camera settings, lighting, colors, and composition
+4. **Connect outputs** to your workflow:
+   - `json_prompt` → Advanced workflows requiring structured data
+   - `text_prompt` → Standard CLIP text encoder
+   - `prompt_only` → Just the main scene description
 
-## Development
+## 📤 Outputs
 
-### Modifying Presets
-
-All preset data is stored in JSON files under `app/public/data/`. You can easily:
-- Add new camera models to `cameras.json`
-- Create custom lighting setups in `lighting.json`
-- Define new scene presets in `presets.json`
-
-### API Endpoint
-
-The Node.js server provides a single API endpoint:
-
-```
-GET /api/data
-```
-
-Returns all preset data combined:
+### JSON Prompt
+Structured JSON perfect for advanced workflows:
 ```json
 {
-  "presets": { ... },
-  "styles": { ... },
-  "cameras": { ... },
-  "lighting": { ... },
-  "mood": { ... },
-  "composition": { ... }
+  "prompt": "A weathered fisherman...",
+  "style": "documentary photography...",
+  "camera": {
+    "angle": "eye level",
+    "distance": "medium close-up",
+    "lens-mm": 85,
+    "f-number": "f/1.8",
+    "ISO": 200,
+    "focus": "Sharp focus on eyes"
+  },
+  "film_stock": "shot on Canon EOS 5D Mark IV...",
+  "lighting": "golden hour lighting...",
+  "colors": {
+    "palette": ["#8B4513", "#4169E1", "#B0C4DE"],
+    "mood": "moody atmosphere..."
+  },
+  "composition": "rule of thirds"
 }
 ```
 
-## License
+### Text Prompt
+Flattened text for standard CLIP encoding:
+```
+A weathered fisherman... Style: documentary photography... Camera: eye level angle, medium close-up, 85mm lens, f/1.8. Shot on Canon EOS 5D Mark IV... Lighting: golden hour lighting... Colors: #8B4513, #4169E1, #B0C4DE. Mood: moody atmosphere... Composition: rule of thirds.
+```
 
-MIT License - Feel free to use, modify, and distribute.
+## 🎬 Presets
 
-## Contributing
+| Category | Presets |
+|----------|---------|
+| **People & Portraits** | Intimate, Boudoir, Fashion, Portrait |
+| **Nature & Outdoors** | Landscape, Wildlife, Macro, Underwater, Astro |
+| **Action & Events** | Sports, Street, Theatrical, Culinary |
+| **Commercial** | Product, Automotive, Architectural |
+| **Artistic** | Cinematic, Vintage, Minimalist |
+
+## 📷 Camera Settings
+
+| Setting | Options |
+|---------|---------|
+| **Angle** | Eye level, Low/High angle, Bird's-eye, Dutch, Over-the-shoulder |
+| **Shot** | Extreme close-up to Ultra wide, Macro, Action shots |
+| **Lens** | 14mm - 400mm, Macro, Fisheye, Tilt-shift |
+| **Aperture** | f/1.2 - f/16 |
+| **ISO** | 100 - 6400 |
+
+## 🔧 Development
+
+### Project Structure
+```
+kiko-flux2-prompt-builder/
+├── __init__.py              # ComfyUI entry point
+├── nodes/
+│   ├── __init__.py
+│   └── prompt_builder_node.py
+├── web/js/
+│   ├── kikoPromptBuilder.js # Frontend extension
+│   └── data/                # JSON preset data
+├── app/                     # Standalone MVP (reference)
+├── pyproject.toml
+└── requirements.txt
+```
+
+### Building from Source
+```bash
+# Clone the repository
+git clone https://github.com/ComfyAssets/kiko-flux2-prompt-builder.git
+cd kiko-flux2-prompt-builder
+
+# Link to ComfyUI
+ln -s $(pwd) /path/to/ComfyUI/custom_nodes/kiko-flux2-prompt-builder
+
+# Install dev dependencies (optional)
+pip install -e ".[dev]"
+
+# Run tests
+pytest -v
+```
+
+## 🤝 Contributing
 
 Contributions welcome! Feel free to:
 - Add new presets
 - Improve the UI
 - Add new features
 - Report bugs
+- Submit pull requests
+
+## 📄 License
+
+MIT License - Feel free to use, modify, and distribute.
+
+## 🙏 Acknowledgments
+
+- [ComfyUI](https://www.comfy.org/) - The powerful node-based workflow platform
+- [Black Forest Labs](https://bfl.ai/) - Creators of the FLUX family of image generation models
+- All contributors and users
 
 ---
 
-*Built for the AI art community*
+*Built with ❤️ for the AI art community by [ComfyAssets](https://github.com/ComfyAssets)*

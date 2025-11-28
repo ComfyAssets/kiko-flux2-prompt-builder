@@ -1,0 +1,40 @@
+{
+  "Emotional Tones": [
+    { "name": "Moody & Atmospheric", "prompt": "moody atmosphere, emotional depth, contemplative feeling, evocative imagery" },
+    { "name": "Dreamy & Ethereal", "prompt": "dreamy atmosphere, ethereal quality, soft and magical, otherworldly feeling" },
+    { "name": "Melancholic", "prompt": "melancholic mood, wistful atmosphere, bittersweet emotion, nostalgic sadness" },
+    { "name": "Joyful & Vibrant", "prompt": "joyful mood, vibrant energy, celebratory atmosphere, lively spirit" },
+    { "name": "Mysterious", "prompt": "mysterious atmosphere, enigmatic mood, intriguing shadows, sense of wonder" },
+    { "name": "Serene & Peaceful", "prompt": "serene atmosphere, peaceful mood, calm tranquility, meditative feeling" },
+    { "name": "Intense & Dramatic", "prompt": "intense atmosphere, dramatic mood, powerful emotion, high stakes feeling" },
+    { "name": "Romantic", "prompt": "romantic mood, intimate atmosphere, tender emotion, love and passion" }
+  ],
+  "Visual Aesthetics": [
+    { "name": "Cinematic", "prompt": "cinematic mood, movie-like atmosphere, dramatic visual storytelling" },
+    { "name": "Vintage & Nostalgic", "prompt": "vintage mood, nostalgic atmosphere, retro aesthetic, timeless feeling" },
+    { "name": "Modern & Sleek", "prompt": "modern aesthetic, sleek and contemporary, minimalist mood, clean design" },
+    { "name": "Gritty & Raw", "prompt": "gritty atmosphere, raw aesthetic, unpolished texture, street-style mood" },
+    { "name": "Elegant & Luxurious", "prompt": "elegant mood, luxurious atmosphere, refined aesthetic, sophisticated feel" },
+    { "name": "Whimsical & Playful", "prompt": "whimsical mood, playful atmosphere, fun and quirky, lighthearted energy" },
+    { "name": "Dark & Gothic", "prompt": "dark gothic mood, shadowy atmosphere, macabre aesthetic, mysterious elegance" },
+    { "name": "Bright & Airy", "prompt": "bright and airy mood, light atmosphere, fresh and open, uplifting feeling" }
+  ],
+  "Environmental Moods": [
+    { "name": "Urban Elegance", "prompt": "urban elegance, city sophistication, metropolitan mood, stylish street atmosphere" },
+    { "name": "Natural & Organic", "prompt": "natural mood, organic atmosphere, earthy aesthetic, connection to nature" },
+    { "name": "Industrial", "prompt": "industrial mood, urban decay aesthetic, raw textures, gritty atmosphere" },
+    { "name": "Coastal & Breezy", "prompt": "coastal mood, ocean breeze atmosphere, seaside feeling, relaxed vibes" },
+    { "name": "Forest & Woodland", "prompt": "forest atmosphere, woodland mood, natural greenery, enchanted feeling" },
+    { "name": "Desert & Arid", "prompt": "desert mood, arid atmosphere, warm earth tones, vast open space" },
+    { "name": "Winter & Cold", "prompt": "winter mood, cold atmosphere, crisp and frozen, quiet stillness" },
+    { "name": "Tropical & Lush", "prompt": "tropical mood, lush atmosphere, vibrant greenery, exotic paradise" }
+  ],
+  "Stylistic Moods": [
+    { "name": "Film Noir", "prompt": "film noir mood, black and white contrast, shadowy mystery, detective atmosphere" },
+    { "name": "Sci-Fi Futuristic", "prompt": "sci-fi mood, futuristic atmosphere, technological aesthetic, cyberpunk vibes" },
+    { "name": "Fantasy & Magical", "prompt": "fantasy mood, magical atmosphere, enchanted aesthetic, mythical feeling" },
+    { "name": "Retro 80s", "prompt": "retro 80s mood, synthwave atmosphere, neon aesthetic, vintage futurism" },
+    { "name": "Bohemian", "prompt": "bohemian mood, free-spirited atmosphere, artistic aesthetic, eclectic vibes" },
+    { "name": "Minimalist Zen", "prompt": "minimalist zen mood, calm atmosphere, simple aesthetic, mindful presence" }
+  ]
+}

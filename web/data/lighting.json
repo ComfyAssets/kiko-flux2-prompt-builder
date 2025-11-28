@@ -1,0 +1,56 @@
+{
+  "Natural Light": [
+    { "name": "Golden Hour", "prompt": "golden hour lighting, warm sunlight, long shadows, soft golden glow" },
+    { "name": "Blue Hour", "prompt": "blue hour lighting, soft twilight, cool blue tones, ambient glow" },
+    { "name": "Harsh Midday Sun", "prompt": "harsh midday sunlight, strong shadows, high contrast, direct overhead sun" },
+    { "name": "Overcast / Diffused", "prompt": "overcast sky, soft diffused natural light, no harsh shadows, even illumination" },
+    { "name": "Window Light", "prompt": "natural window light, soft directional lighting, gentle shadows" },
+    { "name": "Backlit / Rim Light", "prompt": "backlit subject, rim lighting, sun behind subject, glowing edges, lens flare" },
+    { "name": "Dappled Light", "prompt": "dappled sunlight through leaves, natural light patterns, forest lighting" },
+    { "name": "Sunrise", "prompt": "sunrise lighting, warm orange and pink tones, low angle sunlight, morning atmosphere" },
+    { "name": "Sunset", "prompt": "sunset lighting, warm red and orange tones, dramatic sky, evening atmosphere" },
+    { "name": "Moonlight", "prompt": "moonlight illumination, cool blue tones, nighttime ambiance, soft silver light" }
+  ],
+  "Studio Lighting": [
+    { "name": "Three-Point Lighting", "prompt": "three-point lighting setup, key light, fill light, back light, professional studio" },
+    { "name": "Softbox", "prompt": "softbox lighting, soft diffused light, minimal shadows, even skin tones" },
+    { "name": "Ring Light", "prompt": "ring light, even facial illumination, circular catchlights in eyes, beauty lighting" },
+    { "name": "Beauty Dish", "prompt": "beauty dish lighting, soft yet contrasty, wraparound light, fashion photography" },
+    { "name": "Butterfly Lighting", "prompt": "butterfly lighting, paramount lighting, shadow under nose, glamour portrait style" },
+    { "name": "Rembrandt Lighting", "prompt": "Rembrandt lighting, triangle of light on cheek, dramatic portrait lighting" },
+    { "name": "Split Lighting", "prompt": "split lighting, half face illuminated, dramatic contrast, moody portrait" },
+    { "name": "Broad Lighting", "prompt": "broad lighting, lit side of face toward camera, flattering portrait light" },
+    { "name": "Short Lighting", "prompt": "short lighting, shadow side toward camera, slimming effect, dramatic mood" },
+    { "name": "Clamshell Lighting", "prompt": "clamshell lighting, beauty lighting from above and below, soft glamour look" }
+  ],
+  "Dramatic & Cinematic": [
+    { "name": "Chiaroscuro", "prompt": "chiaroscuro lighting, dramatic contrast between light and dark, Renaissance style" },
+    { "name": "Low Key", "prompt": "low key lighting, predominantly dark tones, dramatic shadows, moody atmosphere" },
+    { "name": "High Key", "prompt": "high key lighting, bright and airy, minimal shadows, clean white background" },
+    { "name": "Film Noir", "prompt": "film noir lighting, hard shadows, venetian blind shadows, dramatic black and white mood" },
+    { "name": "Neon Lights", "prompt": "neon lighting, vibrant colored lights, cyberpunk aesthetic, urban night scene" },
+    { "name": "Volumetric Light", "prompt": "volumetric lighting, god rays, light beams through atmosphere, dramatic shafts of light" },
+    { "name": "Silhouette", "prompt": "silhouette lighting, backlit subject, dark figure against bright background" },
+    { "name": "Practical Lights", "prompt": "practical lighting, visible light sources in scene, natural movie set lighting" },
+    { "name": "Motivated Lighting", "prompt": "motivated lighting, light appears to come from realistic sources in scene" }
+  ],
+  "Color & Creative": [
+    { "name": "Colored Gels", "prompt": "colored gel lighting, creative color effects, dramatic colored shadows" },
+    { "name": "RGB Lighting", "prompt": "RGB LED lighting, multicolored illumination, gaming aesthetic, modern creative" },
+    { "name": "Cross Lighting", "prompt": "cross lighting, two lights from opposite sides, dimensional look, textured" },
+    { "name": "Accent Lighting", "prompt": "accent lighting, highlighting specific areas, dramatic emphasis, spot lighting" },
+    { "name": "Warm and Cool Mix", "prompt": "mixed warm and cool lighting, color contrast, orange and blue tones" },
+    { "name": "Candlelight", "prompt": "candlelight illumination, warm flickering glow, intimate romantic atmosphere" },
+    { "name": "Firelight", "prompt": "firelight illumination, warm orange glow, dancing shadows, cozy atmosphere" },
+    { "name": "Fairy Lights / Bokeh", "prompt": "fairy lights, string lights bokeh, magical sparkle, dreamy atmosphere" }
+  ],
+  "Environmental": [
+    { "name": "Street Lights", "prompt": "street light illumination, urban night lighting, pools of light, city atmosphere" },
+    { "name": "Fluorescent", "prompt": "fluorescent lighting, cool greenish tint, office or industrial setting" },
+    { "name": "Tungsten / Incandescent", "prompt": "tungsten lighting, warm orange indoor light, cozy interior atmosphere" },
+    { "name": "Mixed Ambient", "prompt": "mixed ambient lighting, multiple light sources, natural indoor environment" },
+    { "name": "Stage Lighting", "prompt": "stage lighting, dramatic spotlights, performance lighting, theatrical" },
+    { "name": "Car Headlights", "prompt": "car headlight illumination, harsh directional beams, nighttime road scene" },
+    { "name": "Underwater Light", "prompt": "underwater lighting, caustic light patterns, blue-green filtered sunlight" }
+  ]
+}

@@ -1,0 +1,9 @@
+# Kiko FLUX2 Prompt Builder - Requirements
+# No additional dependencies required - uses ComfyUI's built-in environment
+
+# Development dependencies (install with: pip install -r requirements-dev.txt)
+# pytest>=7.0
+# pytest-cov>=4.0
+# black>=23.0
+# flake8>=6.0
+# mypy>=1.0

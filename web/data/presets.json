@@ -1,0 +1,162 @@
+{
+  "intimate": {
+    "prompt": "An intimate close-up portrait of two lovers in soft embrace, faces nearly touching, eyes closed in tender moment, delicate skin textures and subtle expressions visible, shot in available window light with gossamer curtains diffusing the glow, creating an atmosphere of vulnerability and connection.",
+    "style": "black and white photography, timeless elegance, classic aesthetic, dramatic contrasts, emphasizing shapes and textures, evoking nostalgia, focusing on light and shadow, monochromatic storytelling, capturing mood and emotion, artistic expression, minimalist compositions, conveying depth and atmosphere, timeless beauty",
+    "camera": { "angle": "eye level", "shot": "close-up detail", "lens": "85mm", "aperture": "f/1.4", "iso": "400", "focus": "Sharp focus on eyes and lips, soft falloff", "model": "shot on Sony A7 IV with an 85mm f/1.4 G Master portrait lens" },
+    "lighting": "natural window light, soft diffused natural light, no harsh shadows, even illumination",
+    "colors": { "palette": ["#E8D5C4", "#FFFFF0", "#36454F", "#FFFDD0"], "mood": "romantic mood, intimate atmosphere, tender emotion, love and passion" },
+    "composition": "portrait composition, face fills frame, intimate connection, eye contact"
+  },
+  "boudoir": {
+    "prompt": "An elegant boudoir portrait of a woman draped in silk sheets on a vintage brass bed, soft morning light streaming through sheer curtains, creating delicate shadows across the fabric folds, confident and empowered pose with artistic sensuality, warm skin tones against cool linen textures.",
+    "style": "fine art photography, conceptual expression, evocative imagery, artistic interpretation, emotional resonance, creative composition, professional lighting, exquisite detail, immersive experience, storytelling through imagery, conveying mood, unique perspective, thought-provoking concept, capturing beauty, transcending reality",
+    "camera": { "angle": "slightly high", "shot": "medium full shot", "lens": "50mm", "aperture": "f/1.8", "iso": "200", "focus": "Sharp on subject's face, dreamy background blur", "model": "shot on Canon EOS R5 with an 85mm f/1.2 portrait lens" },
+    "lighting": "natural window light, soft directional lighting, gentle shadows",
+    "colors": { "palette": ["#FFFFF0", "#B5A642", "#FFCBA4", "#4682B4"], "mood": "elegant mood, luxurious atmosphere, refined aesthetic, sophisticated feel" },
+    "composition": "environmental portrait composition, subject in context, story-telling background"
+  },
+  "fashion": {
+    "prompt": "A young female fashion designer wearing a tailored cobalt-blue blazer with #2A5BDA accents stands confidently on a rain-drenched Parisian street at dusk, neon signs reflecting off wet cobblestones, adjusting her glasses as she sketches in a leather-bound notebook, with soft golden light from café windows casting long, realistic shadows and precise fabric folds visible under ambient street lamps.",
+    "style": "fashion photography, glamorous, stylish attire, captivating pose, dynamic composition, high-fashion aesthetic, professional studio lighting, expert styling, showcasing trend, conveying elegance, conveying attitude, evoking emotion, creating visual impact, editorial storytelling, artistic interpretation, fashion-forward visual",
+    "camera": { "angle": "eye level", "shot": "medium full shot", "lens": "35mm", "aperture": "f/2.8", "iso": "400", "focus": "Sharp focus on subject and fabric details", "model": "shot on Sony A7 IV with a 35mm f/1.4 G Master lens" },
+    "lighting": "mixed warm and cool lighting, color contrast, orange and blue tones",
+    "colors": { "palette": ["#2A5BDA", "#FFBF00", "#4A4A4A", "#FF69B4"], "mood": "urban elegance, city sophistication, metropolitan mood, stylish street atmosphere" },
+    "composition": "rule of thirds composition, subject off-center, balanced visual weight"
+  },
+  "portrait": {
+    "prompt": "A weathered fisherman with deep-set eyes and salt-and-pepper beard sits on a wooden dock at dawn, his calloused hands wrapped around a steaming cup of coffee, morning mist rolling across the harbor behind him, authentic wrinkles and skin texture visible in the soft directional light.",
+    "style": "documentary photography, capturing reality, social issues, human experiences, photojournalistic storytelling, candid moments, authentic narratives, raising awareness, documenting history, preserving cultural heritage, immersive storytelling, evoking empathy, powerful imagery, journalistic integrity",
+    "camera": { "angle": "eye level", "shot": "medium close-up", "lens": "85mm", "aperture": "f/1.8", "iso": "200", "focus": "Sharp focus on eyes", "model": "shot on Canon EOS 5D Mark IV with a 50mm f/1.2 lens" },
+    "lighting": "golden hour lighting, warm sunlight, long shadows, soft golden glow",
+    "colors": { "palette": ["#8B4513", "#4169E1", "#B0C4DE", "#D2691E"], "mood": "moody atmosphere, emotional depth, contemplative feeling, evocative imagery" },
+    "composition": "rule of thirds composition, subject off-center, balanced visual weight"
+  },
+  "landscape": {
+    "prompt": "A majestic mountain range at golden hour with a pristine alpine lake in the foreground reflecting snow-capped peaks, wildflowers dotting the meadow, layers of atmospheric haze creating depth, and dramatic clouds catching the warm sunset light across the vast wilderness panorama.",
+    "style": "landscape photography, vast vistas, natural beauty, dynamic compositions, captivating scenery, immersive, serene",
+    "camera": { "angle": "eye level", "shot": "wide shot", "lens": "16mm", "aperture": "f/11", "iso": "100", "focus": "Deep focus throughout, hyperfocal distance", "model": "shot on Nikon Z8 with a 50mm f/1.2 lens" },
+    "lighting": "golden hour lighting, warm sunlight, long shadows, soft golden glow",
+    "colors": { "palette": ["#4682B4", "#FFFAFA", "#FF8C00", "#228B22", "#9370DB"], "mood": "serene atmosphere, peaceful mood, calm tranquility, meditative feeling" },
+    "composition": "foreground interest composition, layered depth, near and far elements"
+  },
+  "street": {
+    "prompt": "A candid moment on a bustling Tokyo street at night, a salary man in a crisp suit checking his phone under the glow of neon signs and paper lanterns, steam rising from a nearby ramen stall, rain-slicked pavement reflecting the colorful lights, authentic urban energy captured in a decisive moment.",
+    "style": "documentary photography, capturing reality, social issues, human experiences, photojournalistic storytelling, candid moments, authentic narratives, raising awareness, documenting history, preserving cultural heritage, immersive storytelling, evoking empathy, powerful imagery, journalistic integrity",
+    "camera": { "angle": "eye level", "shot": "medium shot", "lens": "35mm", "aperture": "f/8", "iso": "1600", "focus": "Zone focus, everything sharp from 2m to infinity", "model": "shot on Leica M10 with a 35mm f/1.4 Summilux lens" },
+    "lighting": "neon lighting, vibrant colored lights, cyberpunk aesthetic, urban night scene",
+    "colors": { "palette": ["#FF1493", "#00BFFF", "#FF6600", "#3D3D3D"], "mood": "urban elegance, city sophistication, metropolitan mood, stylish street atmosphere" },
+    "composition": "candid composition, unposed moment, authentic documentary style"
+  },
+  "wildlife": {
+    "prompt": "A magnificent African lion with a golden mane rests on a rocky outcrop at sunset in the Serengeti, piercing amber eyes gazing directly at the camera, every whisker and fur detail visible, acacia trees silhouetted against the orange sky, dust particles catching the warm backlight.",
+    "style": "landscape photography, vast vistas, natural beauty, dynamic compositions, captivating scenery, immersive, serene",
+    "camera": { "angle": "eye level", "shot": "medium close-up", "lens": "400mm", "aperture": "f/5.6", "iso": "800", "focus": "Tack sharp on eyes, creamy background bokeh", "model": "shot on Sony Alpha 1 with a 50mm f/1.2 G Master lens" },
+    "lighting": "backlit subject, rim lighting, sun behind subject, glowing edges, lens flare",
+    "colors": { "palette": ["#DAA520", "#FF4500", "#C4A747", "#1C1C1C"], "mood": "intense atmosphere, dramatic mood, powerful emotion, high stakes feeling" },
+    "composition": "rule of thirds composition, subject off-center, balanced visual weight"
+  },
+  "astro": {
+    "prompt": "The Milky Way galaxy arching over a lone ancient bristlecone pine tree on a remote mountain peak, countless stars and nebulae visible in the pristine dark sky, subtle airglow on the horizon, the tree's twisted silhouette contrasting against the cosmic display.",
+    "style": "landscape photography, vast vistas, natural beauty, dynamic compositions, captivating scenery, immersive, serene",
+    "camera": { "angle": "low angle", "shot": "ultra wide shot", "lens": "14mm", "aperture": "f/1.8", "iso": "3200", "focus": "Manual focus at infinity for stars", "model": "shot on Sony A7S III with a 24mm f/1.4 low-light lens" },
+    "lighting": "moonlight illumination, cool blue tones, nighttime ambiance, soft silver light",
+    "colors": { "palette": ["#191970", "#C0C0C0", "#8A2BE2", "#FFFFFF", "#DAA520"], "mood": "mysterious atmosphere, enigmatic mood, intriguing shadows, sense of wonder" },
+    "composition": "leading lines composition, lines guide viewer's eye to subject"
+  },
+  "sports": {
+    "prompt": "A professional basketball player frozen mid-dunk, muscles tensed in peak athletic form, sweat droplets suspended in the arena lights, crowd blurred in the background, dramatic rim-level perspective capturing the power and grace of the decisive moment.",
+    "style": "Cinematic photography, movie mood, cinematic light, compelling composition, storytelling elements, conveys emotion, mood, and narrative depth, creating visually striking images that feel like still frames from a film",
+    "camera": { "angle": "low angle", "shot": "action medium shot", "lens": "70mm", "aperture": "f/2.8", "iso": "3200", "focus": "Sharp on athlete, motion frozen", "model": "shot on Canon EOS R5 with a 24-70mm f/2.8 zoom lens" },
+    "lighting": "stage lighting, dramatic spotlights, performance lighting, theatrical",
+    "colors": { "palette": ["#FF4500", "#CC0000", "#D2B48C", "#FFFFFF"], "mood": "intense atmosphere, dramatic mood, powerful emotion, high stakes feeling" },
+    "composition": "action composition, motion blur, dynamic movement, peak moment"
+  },
+  "product": {
+    "prompt": "A robotic arm with brushed aluminum joints precisely places a glowing red apple onto a minimalist white countertop under studio lighting, the apple's skin showing subtle subsurface scattering and dewy condensation, with crisp reflections of overhead LEDs on the metal surface and the background softly blurred to emphasize depth and material accuracy.",
+    "style": "food photography, mouthwatering dishes, vibrant colors, appetizing presentations, enticing compositions, delicious details, showcasing textures, capturing freshness, professional lighting, expert styling, culinary storytelling, enhancing food appeal",
+    "camera": { "angle": "slightly high", "shot": "close-up detail", "lens": "90mm", "aperture": "f/8", "iso": "100", "focus": "Sharp focus throughout product", "model": "shot on Hasselblad X1D II 50C with a 65mm f/2.8 medium-format lens" },
+    "lighting": "softbox lighting, soft diffused light, minimal shadows, even skin tones",
+    "colors": { "palette": ["#A8A9AD", "#DC143C", "#FFFFFF", "#4682B4"], "mood": "modern aesthetic, sleek and contemporary, minimalist mood, clean design" },
+    "composition": "product composition, item centered, clean background, commercial appeal"
+  },
+  "automotive": {
+    "prompt": "A luxury electric car with matte-black paint and neon-green #39FF14 brake calipers accelerates through a desert highway at golden hour, kicking up fine dust that catches the low-angle sunlight, with accurate tire deformation, realistic glass reflections of distant mesas, and flawless rendering of the car's logo and dashboard text visible through the windshield.",
+    "style": "Cinematic photography, movie mood, cinematic light, compelling composition, storytelling elements, conveys emotion, mood, and narrative depth, creating visually striking images that feel like still frames from a film",
+    "camera": { "angle": "low dynamic angle", "shot": "wide tracking shot", "lens": "24mm", "aperture": "f/8", "iso": "100", "focus": "Sharp focus on car with motion blur on background", "model": "shot on Sony A7R IV with a 24-70mm f/2.8 zoom lens" },
+    "lighting": "golden hour lighting, warm sunlight, long shadows, soft golden glow",
+    "colors": { "palette": ["#1C1C1C", "#39FF14", "#FF8C00", "#A0522D"], "mood": "intense atmosphere, dramatic mood, powerful emotion, high stakes feeling" },
+    "composition": "diagonal composition, dynamic lines, sense of movement and energy"
+  },
+  "macro": {
+    "prompt": "A close-up macro shot of a honeybee landing delicately on a sunflower's center, pollen clinging to its legs, with extreme detail in the insect's compound eyes and wing veins, set against a shallow depth-of-field background of blurred yellow petals and bokeh sunlight, showcasing biological realism and lighting interaction.",
+    "style": "macro photography, extreme close-ups, intricate details, unseen worlds, capturing texture, emphasizing details, revealing beauty in small things, professional lighting, precise focusing, artistic expression, immersive experience, expert technique",
+    "camera": { "angle": "extreme close-up", "shot": "macro detail", "lens": "100mm macro", "aperture": "f/5.6", "iso": "200", "focus": "Tack sharp on bee's compound eyes, focus stacked", "model": "shot on Canon EOS R5 with a 24-70mm f/2.8 zoom lens" },
+    "lighting": "dappled sunlight through leaves, natural light patterns, forest lighting",
+    "colors": { "palette": ["#DAA520", "#FFD700", "#1C1C1C", "#F0E68C"], "mood": "dreamy atmosphere, ethereal quality, soft and magical, otherworldly feeling" },
+    "composition": "fill the frame composition, tight crop, subject dominates image"
+  },
+  "culinary": {
+    "prompt": "A chef in a crisp white uniform with navy apron ties flips a sizzling pancake mid-air in a professional stainless-steel kitchen, steam rising from the griddle, dynamic motion blur on the pancake, and accurate specular highlights on metal surfaces, all under warm, directional overhead lighting that casts realistic soft shadows.",
+    "style": "food photography, mouthwatering dishes, vibrant colors, appetizing presentations, enticing compositions, delicious details, showcasing textures, capturing freshness, professional lighting, expert styling, culinary storytelling, enhancing food appeal",
+    "camera": { "angle": "slightly low", "shot": "action medium shot", "lens": "35mm", "aperture": "f/4", "iso": "800", "focus": "Sharp on chef, slight motion blur on pancake", "model": "shot on Sony A7 IV with a 35mm f/1.4 G Master lens" },
+    "lighting": "three-point lighting setup, key light, fill light, back light, professional studio",
+    "colors": { "palette": ["#FFFFFF", "#000080", "#C0C0C0", "#FFD700"], "mood": "joyful mood, vibrant energy, celebratory atmosphere, lively spirit" },
+    "composition": "action composition, motion blur, dynamic movement, peak moment"
+  },
+  "theatrical": {
+    "prompt": "A dancer in a flowing crimson dress leaps mid-air in a grand baroque theater, stage lights casting dramatic chiaroscuro across her muscles and fabric, with dynamic motion trails, accurate joint articulation, and intricate details in the gilded balconies and velvet curtains in the background.",
+    "style": "fine art photography, conceptual expression, evocative imagery, artistic interpretation, emotional resonance, creative composition, professional lighting, exquisite detail, immersive experience, storytelling through imagery, conveying mood, unique perspective, thought-provoking concept, capturing beauty, transcending reality",
+    "camera": { "angle": "low angle", "shot": "full body action", "lens": "70mm", "aperture": "f/2.8", "iso": "1600", "focus": "Sharp on dancer with background slightly soft", "model": "shot on Canon EOS R5 with a 24-70mm f/2.8 zoom lens" },
+    "lighting": "chiaroscuro lighting, dramatic contrast between light and dark, Renaissance style",
+    "colors": { "palette": ["#DC143C", "#FFD700", "#722F37", "#FFFFFF"], "mood": "intense atmosphere, dramatic mood, powerful emotion, high stakes feeling" },
+    "composition": "centered composition, symmetrical balance, formal arrangement"
+  },
+  "architectural": {
+    "prompt": "A modernist concrete museum with sweeping curves and geometric cutouts floats above a reflecting pool at blue hour, interior warm lighting visible through floor-to-ceiling windows, with perfect symmetry and leading lines drawing the eye toward the dramatic cantilever.",
+    "style": "architecture photography, striking structures, clean lines, geometric shapes, dramatic angles, play of light and shadow, capturing architectural details, showcasing design elements, evoking mood, professional lighting, precise compositions, emphasizing scale and proportion, creating depth, architectural storytelling, capturing iconic landmarks, immersive experience",
+    "camera": { "angle": "eye level", "shot": "wide shot", "lens": "24mm", "aperture": "f/11", "iso": "100", "focus": "Deep focus throughout, everything sharp", "model": "shot on Nikon Z7 II with a 35mm f/1.8 lens" },
+    "lighting": "blue hour lighting, soft twilight, cool blue tones, ambient glow",
+    "colors": { "palette": ["#808080", "#1E3A5F", "#FFB347", "#C0C0C0"], "mood": "serene atmosphere, peaceful mood, calm tranquility, meditative feeling" },
+    "composition": "centered composition, symmetrical balance, formal arrangement"
+  },
+  "cinematic": {
+    "prompt": "A lone figure in a trench coat walks down a rain-soaked alley in 1940s Los Angeles, neon signs flickering through the mist, harsh shadows from a single street lamp cutting across the wet pavement, venetian blind shadows on the brick wall, the entire scene bathed in moody film noir atmosphere with rich blacks and selective highlights.",
+    "style": "Cinematic photography, movie mood, cinematic light, compelling composition, storytelling elements, conveys emotion, mood, and narrative depth, creating visually striking images that feel like still frames from a film",
+    "camera": { "angle": "low angle", "shot": "wide shot", "lens": "35mm", "aperture": "f/2.8", "iso": "800", "focus": "Deep focus, everything sharp with atmospheric depth", "model": "shot on Sony A7S III with a 24mm f/1.4 low-light lens" },
+    "lighting": "film noir lighting, hard shadows, venetian blind shadows, dramatic black and white mood",
+    "colors": { "palette": ["#0D0D0D", "#39FF14", "#4A4A4A", "#FF8C00"], "mood": "film noir mood, black and white contrast, shadowy mystery, detective atmosphere" },
+    "composition": "leading lines composition, lines guide viewer's eye to subject"
+  },
+  "vintage": {
+    "prompt": "A young couple sharing a milkshake at a classic 1950s American diner, chrome barstools and checkered floor tiles, warm tungsten lighting reflecting off the jukebox, soft focus and subtle film grain evoking the nostalgic warmth of Kodachrome, authentic period clothing and hairstyles.",
+    "style": "experimental photography, pushing the boundaries of creativity, unconventional techniques, innovative concepts, artistic exploration, thought-provoking imagery, pushing the boundaries of traditional photography",
+    "camera": { "angle": "eye level", "shot": "medium shot", "lens": "50mm", "aperture": "f/2.8", "iso": "400", "focus": "Soft focus on couple, dreamy quality", "model": "shot on Fujifilm X-T5 with a 23mm f/1.4 lens, classic chrome film simulation" },
+    "lighting": "tungsten lighting, warm orange indoor light, cozy interior atmosphere",
+    "colors": { "palette": ["#C0C0C0", "#DC143C", "#1C1C1C", "#FFB347"], "mood": "vintage mood, nostalgic atmosphere, retro aesthetic, timeless feeling" },
+    "composition": "environmental portrait composition, subject in context, story-telling background"
+  },
+  "minimalist": {
+    "prompt": "A single red umbrella resting against a stark white wall, dramatic shadow stretching across the pristine surface, extreme negative space emphasizing the solitary object, clean geometric lines and perfect color contrast creating a striking visual statement.",
+    "style": "fine art photography, conceptual expression, evocative imagery, artistic interpretation, emotional resonance, creative composition, professional lighting, exquisite detail, immersive experience, storytelling through imagery, conveying mood, unique perspective, thought-provoking concept, capturing beauty, transcending reality",
+    "camera": { "angle": "straight on", "shot": "medium shot", "lens": "50mm", "aperture": "f/8", "iso": "100", "focus": "Sharp throughout, graphic quality", "model": "shot on Leica Q2 with its 28mm f/1.7 Summilux lens" },
+    "lighting": "high key lighting, bright and airy, minimal shadows, clean white background",
+    "colors": { "palette": ["#FFFFFF", "#DC143C", "#696969", "#F5F5F5"], "mood": "minimalist zen mood, calm atmosphere, simple aesthetic, mindful presence" },
+    "composition": "negative space composition, minimalist, subject with breathing room"
+  },
+  "underwater": {
+    "prompt": "A graceful sea turtle gliding through crystal-clear turquoise waters, sunbeams penetrating from the surface creating god rays, colorful coral reef in the background, tiny fish swimming alongside, the turtle's ancient textured shell and wise eyes in perfect detail.",
+    "style": "landscape photography, vast vistas, natural beauty, dynamic compositions, captivating scenery, immersive, serene",
+    "camera": { "angle": "slightly low", "shot": "medium shot", "lens": "16mm", "aperture": "f/8", "iso": "400", "focus": "Sharp on turtle, reef softly blurred", "model": "shot on Sony A7 IV with a 35mm f/1.4 G Master lens" },
+    "lighting": "underwater lighting, caustic light patterns, blue-green filtered sunlight",
+    "colors": { "palette": ["#40E0D0", "#FF7F50", "#8B4513", "#FFD700"], "mood": "serene atmosphere, peaceful mood, calm tranquility, meditative feeling" },
+    "composition": "rule of thirds composition, subject off-center, balanced visual weight"
+  },
+  "nsfw": {
+    "prompt": "A sensual artistic nude figure bathed in warm golden light from a nearby window, soft shadows caressing natural curves, silk sheets pooling around the form, intimate bedroom setting with luxurious textures, tasteful composition emphasizing the beauty of the human form, professional fine art aesthetic with careful attention to lighting and shadow play.",
+    "style": "fine art photography, conceptual expression, evocative imagery, artistic interpretation, emotional resonance, creative composition, professional lighting, exquisite detail, immersive experience, storytelling through imagery, conveying mood, unique perspective, thought-provoking concept, capturing beauty, transcending reality",
+    "camera": { "angle": "eye level", "shot": "medium shot", "lens": "85mm", "aperture": "f/1.8", "iso": "200", "focus": "Sharp on subject, creamy background bokeh, soft skin rendering", "model": "shot on Sony A7 IV with an 85mm f/1.4 G Master portrait lens" },
+    "lighting": "natural window light, soft directional lighting, gentle shadows",
+    "colors": { "palette": ["#F5DEB3", "#FFE4C4", "#D4A574", "#8B4513", "#1C1C1C"], "mood": "sensual mood, intimate atmosphere, passionate feeling, artistic expression" },
+    "composition": "artistic nude composition, curves and shadows, tasteful framing, fine art aesthetic"
+  }
+}
