@@ -3,6 +3,7 @@ import { app } from "/scripts/app.js";
 const EXTENSION_ID = "kiko-flux2-prompt-builder";
 const NODE_NAME = "KikoFlux2PromptBuilder";
 const ASSET_BASE = `/extensions/${EXTENSION_ID}`;
+const API_BASE = `/${EXTENSION_ID}`;
 
 const dataCache = {
   loaded: false,
@@ -37,7 +38,12 @@ async function loadData() {
   if (dataCache.loaded) return dataCache;
   const names = ["presets", "styles", "cameras", "lighting", "mood", "composition"];
   for (const name of names) {
-    const res = await fetch(`${ASSET_BASE}/data/${name}.json`);
+    // Try API endpoint first (more reliable), fallback to static file
+    let res = await fetch(`${API_BASE}/data/${name}.json`);
+    if (!res.ok) {
+      // Fallback to static file path
+      res = await fetch(`${ASSET_BASE}/data/${name}.json`);
+    }
     if (!res.ok) throw new Error(`Failed to load ${name}`);
     dataCache[name] = await res.json();
   }
