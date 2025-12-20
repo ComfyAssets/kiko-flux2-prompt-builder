@@ -1,7 +1,7 @@
 [project]
 name = "kiko-prompt-builder"
 description = "A visual prompt builder ComfyUI custom node for structured JSON prompt generation. Build photography-style prompts with camera settings, lighting, composition, and color palettes. Compatible with FLUX (Black Forest Labs), z-image, and other JSON-prompt models."
-version = "1.0.1"
+version = "1.0.2"
 license = {file = "LICENSE"}
 dependencies = [
     "# Core dependencies for Kiko Prompt Builder",
