@@ -1,6 +1,6 @@
 import { app } from "/scripts/app.js";
 
-const EXTENSION_ID = "kiko-flux2-prompt-builder";
+const EXTENSION_ID = "kiko-prompt-builder";
 const NODE_NAME = "KikoFlux2PromptBuilder";
 const ASSET_BASE = `/extensions/${EXTENSION_ID}`;
 const API_BASE = `/${EXTENSION_ID}`;
@@ -36,7 +36,14 @@ const defaultState = () => ({
 
 async function loadData() {
   if (dataCache.loaded) return dataCache;
-  const names = ["presets", "styles", "cameras", "lighting", "mood", "composition"];
+  const names = [
+    "presets",
+    "styles",
+    "cameras",
+    "lighting",
+    "mood",
+    "composition",
+  ];
   for (const name of names) {
     // Try API endpoint first (more reliable), fallback to static file
     let res = await fetch(`${API_BASE}/data/${name}.json`);
@@ -56,8 +63,13 @@ function cloneState(state) {
 }
 
 function coercePalette(colors) {
-  if (Array.isArray(colors)) return colors.map((c) => `${c}`.trim()).filter(Boolean);
-  if (typeof colors === "string") return colors.split(",").map((c) => c.trim()).filter(Boolean);
+  if (Array.isArray(colors))
+    return colors.map((c) => `${c}`.trim()).filter(Boolean);
+  if (typeof colors === "string")
+    return colors
+      .split(",")
+      .map((c) => c.trim())
+      .filter(Boolean);
   return [];
 }
 
@@ -105,7 +117,8 @@ function buildData(state) {
       camera.lens = state.cameraLens;
     }
   }
-  if (state.cameraAperture || includeEmpty) camera["f-number"] = state.cameraAperture;
+  if (state.cameraAperture || includeEmpty)
+    camera["f-number"] = state.cameraAperture;
   if (state.cameraISO || includeEmpty) {
     const isoNum = parseInt(state.cameraISO, 10);
     camera.ISO = Number.isNaN(isoNum) ? state.cameraISO : isoNum;
@@ -140,7 +153,8 @@ function buildText(data) {
     const desc = [];
     if (camera.angle) desc.push(`${camera.angle} angle`);
     if (camera.distance) desc.push(camera.distance);
-    if (camera["lens-mm"] !== undefined) desc.push(`${camera["lens-mm"]}mm lens`);
+    if (camera["lens-mm"] !== undefined)
+      desc.push(`${camera["lens-mm"]}mm lens`);
     if (camera.lens) desc.push(`${camera.lens} lens`);
     if (camera["f-number"]) desc.push(camera["f-number"]);
     if (desc.length) parts.push(`Camera: ${desc.join(", ")}`);
@@ -151,7 +165,8 @@ function buildText(data) {
   if (data.lighting) parts.push(`Lighting: ${data.lighting}`);
 
   const colors = data.colors || {};
-  if (colors.palette?.length) parts.push(`Colors: ${colors.palette.join(", ")}`);
+  if (colors.palette?.length)
+    parts.push(`Colors: ${colors.palette.join(", ")}`);
   if (colors.mood) parts.push(`Mood: ${colors.mood}`);
   if (data.composition) parts.push(`Composition: ${data.composition}`);
   return parts.join(". ");
@@ -332,7 +347,7 @@ function syncWidgets(node, state) {
       return;
     }
     const value = state[stateKey];
-    widget.value = typeof value === "boolean" ? value : value ?? "";
+    widget.value = typeof value === "boolean" ? value : (value ?? "");
   });
 }
 
@@ -367,7 +382,12 @@ function attachBuilder(nodeType) {
 function setupNode(node) {
   node.kikoState = node.kikoState || defaultState();
   if (!node.builderButton) {
-    node.builderButton = node.addWidget?.("button", "Open Builder", "open", () => openBuilder(node));
+    node.builderButton = node.addWidget?.(
+      "button",
+      "Open Builder",
+      "open",
+      () => openBuilder(node),
+    );
   }
   if (!findWidget(node, "builder_payload") && node.addWidget) {
     node.addWidget("text", "builder_payload", "", () => {});
@@ -406,7 +426,7 @@ const cameraOptions = {
       { value: "full body", label: "full body" },
       { value: "wide shot", label: "wide shot" },
     ],
-    "Specialized": [
+    Specialized: [
       { value: "macro detail", label: "macro detail" },
       { value: "tight detail", label: "tight detail" },
       { value: "product close-up", label: "product close-up" },
@@ -424,7 +444,7 @@ const cameraOptions = {
       { value: "24mm", label: "24mm (wide)" },
       { value: "28mm", label: "28mm (wide)" },
     ],
-    "Natural": [
+    Natural: [
       { value: "35mm", label: "35mm (natural)" },
       { value: "50mm", label: "50mm (standard)" },
     ],
@@ -435,7 +455,7 @@ const cameraOptions = {
       { value: "135mm", label: "135mm (telephoto)" },
       { value: "200mm", label: "200mm (telephoto)" },
     ],
-    "Specialty": [
+    Specialty: [
       { value: "100mm macro", label: "100mm macro" },
       { value: "fisheye", label: "fisheye" },
       { value: "tilt-shift", label: "tilt-shift" },
@@ -465,7 +485,7 @@ const cameraOptions = {
       { value: "200", label: "200" },
       { value: "400", label: "400" },
     ],
-    "Medium": [
+    Medium: [
       { value: "800", label: "800" },
       { value: "1600", label: "1600" },
     ],
@@ -490,7 +510,9 @@ async function openBuilder(node) {
   if (!ui) ui = createOverlay();
 
   currentNode = node;
-  currentState = applyPresetDefaults(cloneState(node.kikoState || defaultState()));
+  currentState = applyPresetDefaults(
+    cloneState(node.kikoState || defaultState()),
+  );
 
   renderForm(ui, currentState);
   ui.overlay.classList.add("show");
@@ -523,9 +545,17 @@ function createOverlay() {
 
   // Footer
   const footer = createElement("div", "kiko-node-footer");
-  const cancelBtn = createElement("button", "kiko-btn kiko-btn-secondary", "Cancel");
+  const cancelBtn = createElement(
+    "button",
+    "kiko-btn kiko-btn-secondary",
+    "Cancel",
+  );
   cancelBtn.onclick = closeBuilder;
-  const applyBtn = createElement("button", "kiko-btn kiko-btn-primary", "Apply");
+  const applyBtn = createElement(
+    "button",
+    "kiko-btn kiko-btn-primary",
+    "Apply",
+  );
   footer.append(cancelBtn, applyBtn);
 
   node.append(header, body, footer);
@@ -546,7 +576,10 @@ function flattenOptionsToSelect(grouped, includeEmptyLabel = true) {
     if (!Array.isArray(items)) return;
     options.push({ value: "", label: `── ${label} ──`, disabled: true });
     items.forEach((item) => {
-      options.push({ value: item.prompt || "", label: item.name || item.prompt || "" });
+      options.push({
+        value: item.prompt || "",
+        label: item.name || item.prompt || "",
+      });
     });
   });
   return options;
@@ -673,7 +706,9 @@ function renderColors(container, state, onChange) {
 
     const eyeBtn = createElement("button", "kiko-eyedropper-btn");
     eyeBtn.innerHTML = eyeDropperIcon;
-    eyeBtn.title = eyeDropperSupported ? "Pick color from screen" : "Eye dropper requires HTTPS";
+    eyeBtn.title = eyeDropperSupported
+      ? "Pick color from screen"
+      : "Eye dropper requires HTTPS";
     eyeBtn.disabled = !eyeDropperSupported;
     eyeBtn.onclick = async () => {
       if (!eyeDropperSupported) return;
@@ -743,13 +778,19 @@ function renderForm(uiParts, state) {
   const presetSection = createElement("div", "kiko-preset-section");
   const presetOptions = [{ value: "custom", label: "— Select a preset —" }];
   Object.keys(dataCache.presets || {}).forEach((key) => {
-    presetOptions.push({ value: key, label: dataCache.presets[key].name || key });
+    presetOptions.push({
+      value: key,
+      label: dataCache.presets[key].name || key,
+    });
   });
   const presetSelect = buildSelect(presetOptions, state.preset);
   presetSelect.onchange = () => {
     state.preset = presetSelect.value || "custom";
     if (state.preset !== "custom") {
-      const merged = applyPresetDefaults({ ...defaultState(), preset: state.preset });
+      const merged = applyPresetDefaults({
+        ...defaultState(),
+        preset: state.preset,
+      });
       Object.assign(state, merged);
     }
     renderForm(uiParts, state);
@@ -774,33 +815,56 @@ function renderForm(uiParts, state) {
   const styleText = document.createElement("input");
   styleText.value = state.style;
   styleText.placeholder = "e.g., photorealistic, cinematic lighting";
-  const styleSelector = createStyleSelector(styleDropdown, styleText, state.style, (v) => {
-    state.style = v;
-    update();
-  });
+  const styleSelector = createStyleSelector(
+    styleDropdown,
+    styleText,
+    state.style,
+    (v) => {
+      state.style = v;
+      update();
+    },
+  );
   body.appendChild(fieldGroup("Style", styleSelector));
 
   // Camera Settings sub-section
   const cameraSection = createElement("div", "kiko-sub-section");
-  const cameraTitle = createElement("div", "kiko-sub-section-title", "Camera Settings");
+  const cameraTitle = createElement(
+    "div",
+    "kiko-sub-section-title",
+    "Camera Settings",
+  );
   cameraSection.appendChild(cameraTitle);
 
   const row1 = createElement("div", "kiko-inline-fields");
   const angleGroup = createElement("div", "kiko-field-group");
   angleGroup.appendChild(createElement("div", "kiko-field-label", "Angle"));
   angleGroup.appendChild(
-    createComboInput("angle", "eye level", cameraOptions.angle, state.cameraAngle, (v) => {
-      state.cameraAngle = v;
-      update();
-    })
+    createComboInput(
+      "angle",
+      "eye level",
+      cameraOptions.angle,
+      state.cameraAngle,
+      (v) => {
+        state.cameraAngle = v;
+        update();
+      },
+    ),
   );
   const shotGroup = createElement("div", "kiko-field-group");
-  shotGroup.appendChild(createElement("div", "kiko-field-label", "Shot / Distance"));
   shotGroup.appendChild(
-    createComboInput("shot", "medium shot", cameraOptions.shot, state.cameraShot, (v) => {
-      state.cameraShot = v;
-      update();
-    })
+    createElement("div", "kiko-field-label", "Shot / Distance"),
+  );
+  shotGroup.appendChild(
+    createComboInput(
+      "shot",
+      "medium shot",
+      cameraOptions.shot,
+      state.cameraShot,
+      (v) => {
+        state.cameraShot = v;
+        update();
+      },
+    ),
   );
   row1.append(angleGroup, shotGroup);
   cameraSection.appendChild(row1);
@@ -809,18 +873,32 @@ function renderForm(uiParts, state) {
   const lensGroup = createElement("div", "kiko-field-group");
   lensGroup.appendChild(createElement("div", "kiko-field-label", "Lens (mm)"));
   lensGroup.appendChild(
-    createComboInput("lens", "50mm", cameraOptions.lens, state.cameraLens, (v) => {
-      state.cameraLens = v;
-      update();
-    })
+    createComboInput(
+      "lens",
+      "50mm",
+      cameraOptions.lens,
+      state.cameraLens,
+      (v) => {
+        state.cameraLens = v;
+        update();
+      },
+    ),
   );
   const apertureGroup = createElement("div", "kiko-field-group");
-  apertureGroup.appendChild(createElement("div", "kiko-field-label", "Aperture"));
   apertureGroup.appendChild(
-    createComboInput("aperture", "f/2.8", cameraOptions.aperture, state.cameraAperture, (v) => {
-      state.cameraAperture = v;
-      update();
-    })
+    createElement("div", "kiko-field-label", "Aperture"),
+  );
+  apertureGroup.appendChild(
+    createComboInput(
+      "aperture",
+      "f/2.8",
+      cameraOptions.aperture,
+      state.cameraAperture,
+      (v) => {
+        state.cameraAperture = v;
+        update();
+      },
+    ),
   );
   row2.append(lensGroup, apertureGroup);
   cameraSection.appendChild(row2);
@@ -832,10 +910,12 @@ function renderForm(uiParts, state) {
     createComboInput("iso", "100", cameraOptions.iso, state.cameraISO, (v) => {
       state.cameraISO = v;
       update();
-    })
+    }),
   );
   const focusGroup = createElement("div", "kiko-field-group");
-  focusGroup.appendChild(createElement("div", "kiko-field-label", "Focus Description"));
+  focusGroup.appendChild(
+    createElement("div", "kiko-field-label", "Focus Description"),
+  );
   const focusInput = document.createElement("input");
   focusInput.type = "text";
   focusInput.className = "kiko-field-input";
@@ -852,17 +932,23 @@ function renderForm(uiParts, state) {
   // Camera / Film Stock
   const cameraModelGroup = createElement("div", "kiko-field-group");
   const cameraModelLabel = createElement("div", "kiko-field-label");
-  cameraModelLabel.innerHTML = 'Camera / Film Stock <span class="kiko-hint">(optional)</span>';
+  cameraModelLabel.innerHTML =
+    'Camera / Film Stock <span class="kiko-hint">(optional)</span>';
   cameraModelGroup.appendChild(cameraModelLabel);
   const cameraOptions2 = flattenOptionsToSelect(dataCache.cameras, true);
   const cameraDropdown = buildSelect(cameraOptions2, state.cameraModel);
   const cameraText = document.createElement("input");
   cameraText.value = state.cameraModel;
   cameraText.placeholder = "e.g., Shot on Sony A7 IV, Kodak Portra 400";
-  const cameraSelector = createStyleSelector(cameraDropdown, cameraText, state.cameraModel, (v) => {
-    state.cameraModel = v;
-    update();
-  });
+  const cameraSelector = createStyleSelector(
+    cameraDropdown,
+    cameraText,
+    state.cameraModel,
+    (v) => {
+      state.cameraModel = v;
+      update();
+    },
+  );
   cameraModelGroup.appendChild(cameraSelector);
   cameraSection.appendChild(cameraModelGroup);
 
@@ -870,22 +956,31 @@ function renderForm(uiParts, state) {
 
   // Lighting sub-section
   const lightingSection = createElement("div", "kiko-sub-section");
-  lightingSection.appendChild(createElement("div", "kiko-sub-section-title", "Lighting"));
+  lightingSection.appendChild(
+    createElement("div", "kiko-sub-section-title", "Lighting"),
+  );
   const lightingOptions = flattenOptionsToSelect(dataCache.lighting, true);
   const lightingDropdown = buildSelect(lightingOptions, state.lighting);
   const lightingText = document.createElement("input");
   lightingText.value = state.lighting;
   lightingText.placeholder = "e.g., Golden hour, three-point lighting";
-  const lightingSelector = createStyleSelector(lightingDropdown, lightingText, state.lighting, (v) => {
-    state.lighting = v;
-    update();
-  });
+  const lightingSelector = createStyleSelector(
+    lightingDropdown,
+    lightingText,
+    state.lighting,
+    (v) => {
+      state.lighting = v;
+      update();
+    },
+  );
   lightingSection.appendChild(fieldGroup("", lightingSelector));
   body.appendChild(lightingSection);
 
   // Color Palette sub-section
   const colorSection = createElement("div", "kiko-sub-section");
-  colorSection.appendChild(createElement("div", "kiko-sub-section-title", "Color Palette"));
+  colorSection.appendChild(
+    createElement("div", "kiko-sub-section-title", "Color Palette"),
+  );
 
   // Image picker
   const imageDropZone = createElement("div", "kiko-image-drop-zone");
@@ -922,7 +1017,14 @@ function renderForm(uiParts, state) {
   };
 
   imageInput.onchange = (e) => {
-    if (e.target.files?.[0]) loadImageToCanvas(e.target.files[0], imageDropZone, imageCanvas, canvasCtx, pickedColorPreview);
+    if (e.target.files?.[0])
+      loadImageToCanvas(
+        e.target.files[0],
+        imageDropZone,
+        imageCanvas,
+        canvasCtx,
+        pickedColorPreview,
+      );
   };
 
   imageDropZone.ondragover = (e) => {
@@ -938,7 +1040,13 @@ function renderForm(uiParts, state) {
     imageDropZone.classList.remove("drag-over");
     const files = e.dataTransfer.files;
     if (files?.[0]?.type.startsWith("image/")) {
-      loadImageToCanvas(files[0], imageDropZone, imageCanvas, canvasCtx, pickedColorPreview);
+      loadImageToCanvas(
+        files[0],
+        imageDropZone,
+        imageCanvas,
+        canvasCtx,
+        pickedColorPreview,
+      );
     }
   };
 
@@ -983,35 +1091,59 @@ function renderForm(uiParts, state) {
   const moodText = document.createElement("input");
   moodText.value = state.colorMood;
   moodText.placeholder = "e.g., moody yet vibrant";
-  const moodSelector = createStyleSelector(moodDropdown, moodText, state.colorMood, (v) => {
-    state.colorMood = v;
-    update();
-  });
+  const moodSelector = createStyleSelector(
+    moodDropdown,
+    moodText,
+    state.colorMood,
+    (v) => {
+      state.colorMood = v;
+      update();
+    },
+  );
   colorSection.appendChild(fieldGroup("Mood", moodSelector));
 
   body.appendChild(colorSection);
 
   // Composition sub-section
   const compositionSection = createElement("div", "kiko-sub-section");
-  compositionSection.appendChild(createElement("div", "kiko-sub-section-title", "Composition"));
-  const compositionOptions = flattenOptionsToSelect(dataCache.composition, true);
-  const compositionDropdown = buildSelect(compositionOptions, state.composition);
+  compositionSection.appendChild(
+    createElement("div", "kiko-sub-section-title", "Composition"),
+  );
+  const compositionOptions = flattenOptionsToSelect(
+    dataCache.composition,
+    true,
+  );
+  const compositionDropdown = buildSelect(
+    compositionOptions,
+    state.composition,
+  );
   const compositionText = document.createElement("input");
   compositionText.value = state.composition;
   compositionText.placeholder = "rule of thirds, leading lines";
-  const compositionSelector = createStyleSelector(compositionDropdown, compositionText, state.composition, (v) => {
-    state.composition = v;
-    update();
-  });
+  const compositionSelector = createStyleSelector(
+    compositionDropdown,
+    compositionText,
+    state.composition,
+    (v) => {
+      state.composition = v;
+      update();
+    },
+  );
   compositionSection.appendChild(compositionSelector);
   body.appendChild(compositionSection);
 
   // Output Options sub-section
   const outputSection = createElement("div", "kiko-sub-section");
-  outputSection.appendChild(createElement("div", "kiko-sub-section-title", "Output Options"));
+  outputSection.appendChild(
+    createElement("div", "kiko-sub-section-title", "Output Options"),
+  );
 
   const toggleRow1 = createElement("div", "kiko-toggle-row");
-  const toggleLabel1 = createElement("span", "kiko-toggle-label", "Include empty fields");
+  const toggleLabel1 = createElement(
+    "span",
+    "kiko-toggle-label",
+    "Include empty fields",
+  );
   const toggleSwitch1 = createElement("label", "kiko-toggle-switch");
   const toggleInput1 = document.createElement("input");
   toggleInput1.type = "checkbox";
@@ -1026,7 +1158,11 @@ function renderForm(uiParts, state) {
   outputSection.appendChild(toggleRow1);
 
   const toggleRow2 = createElement("div", "kiko-toggle-row");
-  const toggleLabel2 = createElement("span", "kiko-toggle-label", "Numeric lens-mm format");
+  const toggleLabel2 = createElement(
+    "span",
+    "kiko-toggle-label",
+    "Numeric lens-mm format",
+  );
   const toggleSwitch2 = createElement("label", "kiko-toggle-switch");
   const toggleInput2 = document.createElement("input");
   toggleInput2.type = "checkbox";
@@ -1051,14 +1187,17 @@ function renderForm(uiParts, state) {
     if (!currentNode) return;
     currentNode.kikoState = cloneState(state);
     syncWidgets(currentNode, currentNode.kikoState);
-    if (currentNode.graph?.setDirtyCanvas) currentNode.graph.setDirtyCanvas(true, true);
+    if (currentNode.graph?.setDirtyCanvas)
+      currentNode.graph.setDirtyCanvas(true, true);
     closeBuilder();
   };
 
   // Close dropdowns on outside click
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".kiko-combo-input")) {
-      document.querySelectorAll(".kiko-dropdown-menu.open").forEach((m) => m.classList.remove("open"));
+      document
+        .querySelectorAll(".kiko-dropdown-menu.open")
+        .forEach((m) => m.classList.remove("open"));
     }
   });
 }
